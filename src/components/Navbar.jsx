@@ -19,27 +19,30 @@ const Navbar = () => {
 
           {/* Desktop Menu */}
           <div className="hidden lg:flex space-x-8 items-center">
-            <Link to="/platform" className="text-gray-800 hover:text-blue-600">
+            <Link to="/platform" className="text-[#12285f] hover:text-blue-600">
               Platform
             </Link>
-            <Link to="/solutions" className="text-gray-800 hover:text-blue-600">
+            <Link
+              to="/solutions"
+              className="text-[#12285f] hover:text-blue-600"
+            >
               Solutions
             </Link>
-            <Link to="/develop" className="text-gray-800 hover:text-blue-600">
+            <Link to="/develop" className="text-[#12285f] hover:text-blue-600">
               Develop
             </Link>
-            <Link to="/download" className="text-gray-800 hover:text-blue-600">
+            <Link to="/download" className="text-[#12285f] hover:text-blue-600">
               Download
             </Link>
-            <Link to="/support" className="text-gray-800 hover:text-blue-600">
+            <Link to="/support" className="text-[#12285f] hover:text-blue-600">
               Get Support
             </Link>
-            <Link to="/connect" className="text-gray-800 hover:text-blue-600">
+            <Link to="/connect" className="text-[#12285f] hover:text-blue-600">
               Connect
             </Link>
             <Link
               to="/support-drupal"
-              className="text-gray-800 hover:text-blue-600"
+              className="text-[#12285f] hover:text-blue-600"
             >
               Support Nexa
             </Link>
