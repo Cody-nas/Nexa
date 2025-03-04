@@ -1,26 +1,30 @@
 import React from "react";
+import { PiUserCircleCheckBold } from "react-icons/pi";
+import { FaArrowTrendDown } from "react-icons/fa6";
+import { FaExpandArrowsAlt } from "react-icons/fa";
+import { PiBuildingsDuotone } from "react-icons/pi";
 
 const features = [
   {
-    icon: "📊",
+    icon: <PiUserCircleCheckBold />,
     title: "User-centric experiences",
     description:
       "Create compelling content across more devices than ever with tools that build versatile, structured content and integrate seamlessly with a wide range of digital marketing channels.",
   },
   {
-    icon: "💰",
+    icon: <FaArrowTrendDown />,
     title: "Lower cost of ownership",
     description:
       "With no vendor lock-in and low-code/no-code options available, marketers can independently drive your digital strategy and publishing workflows.",
   },
   {
-    icon: "🔗",
+    icon: <FaExpandArrowsAlt />,
     title: "Limitless flexibility",
     description:
       "A fully composable, open-source, API-first platform that allows you to design around your vision and your user needs. A global network of open source contributors continuously develops and innovates on core features.",
   },
   {
-    icon: "🏢",
+    icon: <PiBuildingsDuotone />,
     title: "Enterprise-grade tooling",
     description:
       "The most accessible, secure open-source DXP available. It adheres to industry standard privacy and security standards and checks all the boxes for your IT team.",
