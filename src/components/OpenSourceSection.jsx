@@ -1,4 +1,5 @@
 import React from "react";
+import man from "../assets/man.jpg";
 
 const OpenSourceSection = () => {
   return (
@@ -15,20 +16,20 @@ const OpenSourceSection = () => {
             <div>
               <h3 className="text-4xl font-bold">100+</h3>
               <p className="text-lg mt-2">
-                Drupal Certified Partners provide global support
+                Nexa Certified Partners provide global support
               </p>
             </div>
 
             {/* Stat 2 */}
             <div>
               <h3 className="text-4xl font-bold">10k+</h3>
-              <p className="text-lg mt-2">Experienced Drupal professionals</p>
+              <p className="text-lg mt-2">Experienced Nexa professionals</p>
             </div>
 
             {/* Stat 3 */}
             <div>
               <h3 className="text-4xl font-bold">400k+</h3>
-              <p className="text-lg mt-2">Websites using Drupal today</p>
+              <p className="text-lg mt-2">Websites using Nexa today</p>
             </div>
           </div>
         </div>
@@ -36,8 +37,8 @@ const OpenSourceSection = () => {
         {/* Right Side - Image */}
         <div className="flex justify-center">
           <img
-            src="https://source.unsplash.com/500x400/?technology,laptop"
-            alt="Smiling developer"
+            src={man}
+            alt="Smiling man"
             className="w-full max-w-sm md:max-w-md rounded-lg shadow-lg"
           />
         </div>
