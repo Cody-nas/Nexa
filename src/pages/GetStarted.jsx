@@ -181,7 +181,7 @@ const GetStarted = () => {
                 <option value="FCT">Federal Capital Territory (Abuja)</option>
               </select>
             </div>
-            <Link to="/dashboard">
+            <Link to="/login">
               <button className="w-full bg-blue-600 text-white p-2 rounded-md hover:bg-blue-700">
                 Submit
               </button>

@@ -12,7 +12,6 @@ import Dashboard from "./pages/Dashboard";
 // import Support from "./pages/Support";
 // import Connect from "./pages/Connect";
 // import SupportDrupal from "./pages/SupportDrupal";
-// import GetStarted from "./pages/GetStarted";
 
 const PrivateRoute = ({ element }) => {
   const { user } = useAuth();
@@ -34,7 +33,6 @@ const App = () => {
         {/* <Route path="/support" element={<Support />} /> */}
         {/* <Route path="/connect" element={<Connect />} /> */}
         {/* <Route path="/support-drupal" element={<SupportDrupal />} /> */}
-        {/* <Route path="/get-started" element={<GetStarted />} /> */}
 
         {/* protected route - only logged- in users can access */}
         <Route

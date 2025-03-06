@@ -8,7 +8,7 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Add your login logic here
+
     console.log("Email:", email);
     console.log("Password:", password);
     console.log("Remember Me:", rememberMe);
@@ -97,7 +97,10 @@ const Login = () => {
         <div className="mt-6 text-center">
           <p className="text-sm text-gray-600">
             Don't have an account?{" "}
-            <Link to="/register" className="text-blue-600 hover:text-blue-800">
+            <Link
+              to="/get-started"
+              className="text-blue-600 hover:text-blue-800"
+            >
               Register here
             </Link>
           </p>
