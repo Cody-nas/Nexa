@@ -6,10 +6,10 @@ import { GrGroup } from "react-icons/gr";
 const GetStarted = () => {
   return (
     <section className="bg-blue-100 min-h-screen flex items-center justify-center px-6">
-      <div className=" w-full grid md:grid-cols-2 gap-12  p-8 rounded-lg shadow-lg">
+      <div className=" w-full grid md:grid-cols-2 gap-14 p-4 ">
         {/* left side */}
-        <div>
-          <div className="mb-8 flex items-start">
+        <div className="space-x-6 mt-6 ">
+          <div className="mb-8 mt-10 flex items-start">
             <div className="rounded-xl border-2 p-3 mr-3">
               <MdEdit className="w-10 h-10 " />
             </div>
@@ -26,7 +26,7 @@ const GetStarted = () => {
             </div>
           </div>
 
-          <div className=" mb-8 flex items-start">
+          <div className=" mb-8 mt-10 flex items-start">
             <div className="rounded-xl border-2 p-3 mr-3">
               <GrGroup className="w-10 h-10 " />
             </div>
@@ -42,7 +42,7 @@ const GetStarted = () => {
             </div>
           </div>
 
-          <div className="  flex items-start">
+          <div className="  flex mt-10 items-start">
             <div className="rounded-xl border-2 p-3 mr-3">
               <RxCube className="w-10 h-10 " />
             </div>
@@ -51,7 +51,7 @@ const GetStarted = () => {
                 Ready-to-go out of the box
               </h3>
               <p className="text-gray-700 mt-2">
-                Drupal CMS arrives with a functional baseline, allowing users to
+                Nexa CMS arrives with a functional baseline, allowing users to
                 add content, customize layouts, and see tangible results without
                 touching a line of code.
               </p>
@@ -60,7 +60,7 @@ const GetStarted = () => {
         </div>
 
         {/* right side */}
-        <div>
+        <div className="bg-white p-8 rounded-xl shadow-xl">
           <h3 className="text-xl font-bold text-blue-900 mb-4">Sign Up</h3>
           <form className="space-y-4">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -118,69 +118,67 @@ const GetStarted = () => {
               />
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div>
-                <label className="block font-semibold text-gray-700">
-                  Country *
-                </label>
-                <select
-                  className="w-full border border-gray-300 p-2 rounded-md"
-                  required
-                >
-                  <option>Nigeria</option>
-                  <option>United States</option>
-                  <option>United Kingdom</option>
-                </select>
-              </div>
+            <div>
+              <label className="block font-semibold text-gray-700">
+                Country *
+              </label>
+              <select
+                className="w-full border border-gray-300 p-2 rounded-md"
+                required
+              >
+                <option>Nigeria</option>
+                {/* <option>United States</option>
+                <option>United Kingdom</option> */}
+              </select>
+            </div>
 
-              <div>
-                <label className="block font-semibold text-gray-700">
-                  State *
-                </label>
-                <select
-                  className="w-full border border-gray-300 p-2 rounded-md"
-                  required
-                >
-                  <option value="">Select State</option>
-                  <option value="Abia">Abia</option>
-                  <option value="Adamawa">Adamawa</option>
-                  <option value="Akwa Ibom">Akwa Ibom</option>
-                  <option value="Anambra">Anambra</option>
-                  <option value="Bauchi">Bauchi</option>
-                  <option value="Bayelsa">Bayelsa</option>
-                  <option value="Benue">Benue</option>
-                  <option value="Borno">Borno</option>
-                  <option value="Cross River">Cross River</option>
-                  <option value="Delta">Delta</option>
-                  <option value="Ebonyi">Ebonyi</option>
-                  <option value="Edo">Edo</option>
-                  <option value="Ekiti">Ekiti</option>
-                  <option value="Enugu">Enugu</option>
-                  <option value="Gombe">Gombe</option>
-                  <option value="Imo">Imo</option>
-                  <option value="Jigawa">Jigawa</option>
-                  <option value="Kaduna">Kaduna</option>
-                  <option value="Kano">Kano</option>
-                  <option value="Katsina">Katsina</option>
-                  <option value="Kebbi">Kebbi</option>
-                  <option value="Kogi">Kogi</option>
-                  <option value="Kwara">Kwara</option>
-                  <option value="Lagos">Lagos</option>
-                  <option value="Nasarawa">Nasarawa</option>
-                  <option value="Niger">Niger</option>
-                  <option value="Ogun">Ogun</option>
-                  <option value="Ondo">Ondo</option>
-                  <option value="Osun">Osun</option>
-                  <option value="Oyo">Oyo</option>
-                  <option value="Plateau">Plateau</option>
-                  <option value="Rivers">Rivers</option>
-                  <option value="Sokoto">Sokoto</option>
-                  <option value="Taraba">Taraba</option>
-                  <option value="Yobe">Yobe</option>
-                  <option value="Zamfara">Zamfara</option>
-                  <option value="FCT">Federal Capital Territory (Abuja)</option>
-                </select>
-              </div>
+            <div>
+              <label className="block font-semibold text-gray-700">
+                State *
+              </label>
+              <select
+                className="w-full border border-gray-300 p-2 rounded-md"
+                required
+              >
+                <option value="">Select State</option>
+                <option value="Abia">Abia</option>
+                <option value="Adamawa">Adamawa</option>
+                <option value="Akwa Ibom">Akwa Ibom</option>
+                <option value="Anambra">Anambra</option>
+                <option value="Bauchi">Bauchi</option>
+                <option value="Bayelsa">Bayelsa</option>
+                <option value="Benue">Benue</option>
+                <option value="Borno">Borno</option>
+                <option value="Cross River">Cross River</option>
+                <option value="Delta">Delta</option>
+                <option value="Ebonyi">Ebonyi</option>
+                <option value="Edo">Edo</option>
+                <option value="Ekiti">Ekiti</option>
+                <option value="Enugu">Enugu</option>
+                <option value="Gombe">Gombe</option>
+                <option value="Imo">Imo</option>
+                <option value="Jigawa">Jigawa</option>
+                <option value="Kaduna">Kaduna</option>
+                <option value="Kano">Kano</option>
+                <option value="Katsina">Katsina</option>
+                <option value="Kebbi">Kebbi</option>
+                <option value="Kogi">Kogi</option>
+                <option value="Kwara">Kwara</option>
+                <option value="Lagos">Lagos</option>
+                <option value="Nasarawa">Nasarawa</option>
+                <option value="Niger">Niger</option>
+                <option value="Ogun">Ogun</option>
+                <option value="Ondo">Ondo</option>
+                <option value="Osun">Osun</option>
+                <option value="Oyo">Oyo</option>
+                <option value="Plateau">Plateau</option>
+                <option value="Rivers">Rivers</option>
+                <option value="Sokoto">Sokoto</option>
+                <option value="Taraba">Taraba</option>
+                <option value="Yobe">Yobe</option>
+                <option value="Zamfara">Zamfara</option>
+                <option value="FCT">Federal Capital Territory (Abuja)</option>
+              </select>
             </div>
 
             <button className="w-full bg-blue-600 text-white p-2 rounded-md hover:bg-blue-700">
