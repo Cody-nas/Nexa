@@ -2,6 +2,7 @@ import React from "react";
 import { MdEdit } from "react-icons/md";
 import { RxCube } from "react-icons/rx";
 import { GrGroup } from "react-icons/gr";
+import { Link } from "react-router-dom";
 
 const GetStarted = () => {
   return (
@@ -180,10 +181,11 @@ const GetStarted = () => {
                 <option value="FCT">Federal Capital Territory (Abuja)</option>
               </select>
             </div>
-
-            <button className="w-full bg-blue-600 text-white p-2 rounded-md hover:bg-blue-700">
-              Submit
-            </button>
+            <Link to="/dashboard">
+              <button className="w-full bg-blue-600 text-white p-2 rounded-md hover:bg-blue-700">
+                Submit
+              </button>
+            </Link>
           </form>
         </div>
       </div>
