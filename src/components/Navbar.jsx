@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { FaRegUser } from "react-icons/fa6";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -46,6 +47,9 @@ const Navbar = () => {
             >
               Support Nexa
             </Link>
+
+            {/* User Icon */}
+            <FaRegUser />
             <Link
               to="/get-started"
               className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700"
