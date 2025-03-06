@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import login from "../assets/login.jpg";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -15,9 +16,13 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
-        <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">
+    <div
+      className="min-h-screen flex items-center justify-center bg-cover bg-center"
+      style={{ backgroundImage: `url(${login})` }}
+    >
+      {/* Login Form */}
+      <div className="bg-white p-8 rounded-2xl shadow-lg w-full max-w-md z-10">
+        <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">
           Login to Your Account
         </h2>
         <form onSubmit={handleSubmit}>
