@@ -10,6 +10,7 @@ import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import GetStarted from "./pages/GetStarted";
 import Login from "./pages/Login";
+import DashboardLayout from "./layouts/DashboardLayout";
 import Dashboard from "./pages/Dashboard";
 // import { useAuth } from "./context/AuthContext"; // Ensure you have AuthContext
 
@@ -24,7 +25,9 @@ const Layout = ({ children }) => {
   const hideNavbarRoutes = ["/login", "/dashboard"]; // Add paths where Navbar should be hidden
   return (
     <>
-      {!hideNavbarRoutes.includes(location.pathname) && <Navbar />}
+      {!hideNavbarRoutes.some((path) => location.pathname.startsWith(path)) && (
+        <Navbar />
+      )}
       {children}
     </>
   );
@@ -44,7 +47,7 @@ const App = () => {
           {/* Protected Route */}
           <Route
             path="/dashboard"
-            element={<PrivateRoute element={<Dashboard />} />}
+            element={<PrivateRoute element={<DashboardLayout />} />}
           />
         </Routes>
       </Layout>
