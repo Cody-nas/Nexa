@@ -49,7 +49,9 @@ const Navbar = () => {
             </Link>
 
             {/* User Icon */}
-            <FaRegUser />
+            <Link to={"/login"}>
+              <FaRegUser className="text-[#12285f] rounded-full  cursor-pointer hover:text-blue-600" />
+            </Link>
             <Link
               to="/get-started"
               className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700"
