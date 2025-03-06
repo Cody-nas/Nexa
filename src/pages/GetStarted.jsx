@@ -6,7 +6,7 @@ import { GrGroup } from "react-icons/gr";
 const GetStarted = () => {
   return (
     <section className="bg-blue-100 min-h-screen flex items-center justify-center px-6">
-      <div className="max-w-6xl w-full grid md:grid-cols-2 gap-12  p-8 rounded-lg shadow-lg">
+      <div className=" w-full grid md:grid-cols-2 gap-12  p-8 rounded-lg shadow-lg">
         {/* left side */}
         <div>
           <div className="mb-8 flex items-start">
