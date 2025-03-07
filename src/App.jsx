@@ -10,7 +10,7 @@ import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import GetStarted from "./pages/GetStarted";
 import Login from "./pages/Login";
-import DashboardLayout from "./layouts/DashboardLayout";
+// import DashboardLayout from "./layouts/DashboardLayout";
 import Dashboard from "./pages/Dashboard";
 // import { useAuth } from "./context/AuthContext"; // Ensure you have AuthContext
 
@@ -47,7 +47,7 @@ const App = () => {
           {/* Protected Route */}
           <Route
             path="/dashboard"
-            element={<PrivateRoute element={<DashboardLayout />} />}
+            element={<PrivateRoute element={<Dashboard />} />}
           />
         </Routes>
       </Layout>
