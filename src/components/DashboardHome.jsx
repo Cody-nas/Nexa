@@ -3,7 +3,7 @@ import Navbar from "./DashboardNavbar";
 
 const DashboardHome = () => {
   return (
-    <div>
+    <div className="w-full">
       <Navbar />
     </div>
   );
