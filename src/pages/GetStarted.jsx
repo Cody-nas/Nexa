@@ -86,6 +86,28 @@ const GetStarted = () => {
                 />
               </div>
             </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label className="block font-semibold text-gray-700">
+                  Password *
+                </label>
+                <input
+                  type="password"
+                  className="w-full border border-gray-300 p-2 rounded-md"
+                  required
+                />
+              </div>
+              <div>
+                <label className="block font-semibold text-gray-700">
+                  Confirm Password *
+                </label>
+                <input
+                  type="password"
+                  className="w-full border border-gray-300 p-2 rounded-md"
+                  required
+                />
+              </div>
+            </div>
 
             <div>
               <label className="block font-semibold text-gray-700">
@@ -96,6 +118,19 @@ const GetStarted = () => {
                 className="w-full border border-gray-300 p-2 rounded-md"
                 required
               />
+            </div>
+
+            <div>
+              <label className="block font-semibold text-gray-700">
+                Purpose Of Building *
+              </label>
+              <select
+                className="w-full border border-gray-300 p-2 rounded-md"
+                required
+              >
+                <option>For yourself</option>
+                <option>For client</option>
+              </select>
             </div>
 
             <div>
