@@ -10,51 +10,54 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-white shadow-lg">
+    <nav className="bg-[#0A2342] shadow-lg">
       <div className="container mx-auto px-6 py-4">
         <div className="flex justify-between items-center">
           {/* Logo */}
-          <Link to="/" className="text-2xl font-bold text-gray-800">
+          <Link to="/" className="text-2xl font-bold text-[#C7FFDA]">
             Nexa
           </Link>
 
           {/* Desktop Menu */}
           <div className="hidden lg:flex space-x-8 items-center">
-            <Link to="/platform" className="text-[#12285f] hover:text-blue-600">
+            <Link
+              to="/platform"
+              className="text-[#C7FFDA] hover:text-[#087E8B]"
+            >
               Platform
             </Link>
             <Link
               to="/solutions"
-              className="text-[#12285f] hover:text-blue-600"
+              className="text-[#C7FFDA] hover:text-[#087E8B]"
             >
               Solutions
             </Link>
-            <Link to="/develop" className="text-[#12285f] hover:text-blue-600">
+            <Link to="/develop" className="text-[#C7FFDA] hover:text-[#087E8B]">
               Develop
             </Link>
-            <Link to="/download" className="text-[#12285f] hover:text-blue-600">
+            <Link
+              to="/download"
+              className="text-[#C7FFDA] hover:text-[#087E8B]"
+            >
               Download
             </Link>
-            <Link to="/support" className="text-[#12285f] hover:text-blue-600">
+            <Link to="/support" className="text-[#C7FFDA] hover:text-[#087E8B]">
               Get Support
             </Link>
-            <Link to="/connect" className="text-[#12285f] hover:text-blue-600">
+            <Link to="/connect" className="text-[#C7FFDA] hover:text-[#087E8B]">
               Connect
             </Link>
-            <Link
-              to="/support-drupal"
-              className="text-[#12285f] hover:text-blue-600"
-            >
+            <Link className="text-[#C7FFDA] hover:text-[#087E8B]">
               Support Nexa
             </Link>
 
             {/* User Icon */}
             <Link to={"/login"}>
-              <FaRegUser className="text-[#12285f] rounded-full  cursor-pointer hover:text-blue-600" />
+              <FaRegUser className="text-[#C7FFDA] rounded-full  cursor-pointer hover:text-[#087E8B]" />
             </Link>
             <Link
               to="/get-started"
-              className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700"
+              className="bg-[#087E8B] text-white px-4 py-2 rounded-md hover:bg-[#C7FFDA] hover:text-black"
             >
               Get Started
             </Link>
@@ -62,7 +65,7 @@ const Navbar = () => {
 
           {/* Mobile Menu Toggle Button */}
           <button
-            className="lg:hidden text-gray-800 focus:outline-none"
+            className="lg:hidden text-[#C7FFDA] focus:outline-none"
             onClick={toggleMobileMenu}
           >
             <svg
@@ -85,56 +88,64 @@ const Navbar = () => {
         <div
           className={`${
             isMobileMenuOpen ? "block" : "hidden"
-          } lg:hidden mt-4 space-y-2`}
+          } lg:hidden mt-4 flex flex-col items-center justify-center space-y-6`}
         >
           <Link
             to="/platform"
-            className="block text-gray-800 hover:text-blue-600"
+            className="block text-[#C7FFDA] hover:text-[#087E8B]"
           >
             Platform
           </Link>
           <Link
             to="/solutions"
-            className="block text-gray-800 hover:text-blue-600"
+            className="block text-[#C7FFDA] hover:text-[#087E8B]"
           >
             Solutions
           </Link>
           <Link
             to="/develop"
-            className="block text-gray-800 hover:text-blue-600"
+            className="block text-[#C7FFDA] hover:text-[#087E8B]"
           >
             Develop
           </Link>
           <Link
             to="/download"
-            className="block text-gray-800 hover:text-blue-600"
+            className="block text-[#C7FFDA] hover:text-[#087E8B]"
           >
             Download
           </Link>
           <Link
             to="/support"
-            className="block text-gray-800 hover:text-blue-600"
+            className="block text-[#C7FFDA] hover:text-[#087E8B]"
           >
             Get Support
           </Link>
           <Link
             to="/connect"
-            className="block text-gray-800 hover:text-blue-600"
+            className="block text-[#C7FFDA] hover:text-[#087E8B]"
           >
             Connect
           </Link>
           <Link
-            to="/support-drupal"
-            className="block text-gray-800 hover:text-blue-600"
+            to="/support-nexa"
+            className="block text-[#C7FFDA] hover:text-[#087E8B]"
           >
-            Support Drupal
+            Support Nexa
           </Link>
           <Link
             to="/get-started"
-            className="block bg-blue-600 text-white px-4 py-2 rounded-md text-center hover:bg-blue-700"
+            className="bg-[#087E8B] text-white px-6 py-3 rounded-md hover:bg-[#C7FFDA] hover:text-black"
           >
             Get Started
           </Link>
+
+          {/* Close Button */}
+          <button
+            className="text-[#C7FFDA] text-lg hover:text-[#087E8B] transition-colors"
+            onClick={() => setIsMobileMenuOpen(false)}
+          >
+            ✖
+          </button>
         </div>
       </div>
     </nav>

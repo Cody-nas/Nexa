@@ -8,6 +8,11 @@ export default defineConfig({
   varients: {
     extend: {
       display: ["focus-group"],
+      colors: {
+        "oxford-blue": "#0A2342",
+        teal: "#087E8B",
+        "tea-green": "#C7FFDA",
+      },
     },
   },
 });
