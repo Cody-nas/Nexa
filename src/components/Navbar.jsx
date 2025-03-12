@@ -20,36 +20,34 @@ const Navbar = () => {
 
           {/* Desktop Menu */}
           <div className="hidden lg:flex space-x-8 items-center">
-            <Link
-              to="/platform"
-              className="text-[#C7FFDA] hover:text-[#087E8B]"
-            >
-              Platform
+            <Link to="/" className="text-[#C7FFDA] hover:text-[#087E8B]">
+              Home
             </Link>
             <Link
-              to="/solutions"
+              to="/features"
               className="text-[#C7FFDA] hover:text-[#087E8B]"
             >
-              Solutions
+              Features
             </Link>
-            <Link to="/develop" className="text-[#C7FFDA] hover:text-[#087E8B]">
-              Develop
+            <Link to="/" className="text-[#C7FFDA] hover:text-[#087E8B]">
+              Pricing
             </Link>
             <Link
-              to="/download"
+              to="/templates"
               className="text-[#C7FFDA] hover:text-[#087E8B]"
             >
-              Download
+              Templates
+            </Link>
+            <Link
+              to="/integration"
+              className="text-[#C7FFDA] hover:text-[#087E8B]"
+            >
+              Integration
             </Link>
             <Link to="/support" className="text-[#C7FFDA] hover:text-[#087E8B]">
-              Get Support
+              Support
             </Link>
-            <Link to="/connect" className="text-[#C7FFDA] hover:text-[#087E8B]">
-              Connect
-            </Link>
-            <Link className="text-[#C7FFDA] hover:text-[#087E8B]">
-              Support Nexa
-            </Link>
+            <Link className="text-[#C7FFDA] hover:text-[#087E8B]">Contact</Link>
 
             {/* User Icon */}
             <Link to={"/login"}>
