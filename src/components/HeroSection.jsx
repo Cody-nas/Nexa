@@ -11,7 +11,7 @@ const HeroSection = () => {
       <div className="relative  mb flex flex-col gap-2 md:flex-row items-center  mx-auto">
         {/* Text Content */}
 
-        <div className=" md:w-3xl mt-6  bg-[#0A2342] py-32 px-24 rounded-4xl  space-y-5">
+        <div className=" md:w-3xl mt-2  bg-[#0A2342] py-30 px-20 rounded-4xl  space-y-5">
           {" "}
           <div className="flex mt-4 ml-3  space-x-3">
             <div className="w-5 h-5 bg-[#087E8B] rounded-full"></div>
@@ -19,14 +19,13 @@ const HeroSection = () => {
             <div className="w-5 h-5 bg-[#087E8B] rounded-full"></div>
           </div>
           <h1 className="text-5xl text-[#C7FFDA] leading font-bold mx-2 mt-6 ">
+            Build Stunning Websites Effortlessly
+          </h1>
+          <p className="text-3xl text-[#C7FFDA] mx-3 mt-6">
             Create, manage, and scale your website with ease using our powerful
             CMS. No coding required.
-          </h1>
-          {/* <p className="text-4xl text-[#C7FFDA] mx-2 mt-6">
-            Nexa is a fully composable CMS that allows you to design a digital
-            experience to your vision.
-          </p> */}
-          <button className="bg-[#087E8B] mt-4 text-white px-4 py-2 rounded-md hover:bg-[#C7FFDA] hover:text-black">
+          </p>
+          <button className="bg-[#087E8B] mt-6 text-white px-4 py-2 rounded-md hover:bg-[#C7FFDA] hover:text-black">
             Try Nexa CMS →
           </button>
         </div>
