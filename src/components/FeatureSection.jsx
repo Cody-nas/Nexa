@@ -7,46 +7,56 @@ import { PiBuildingsDuotone } from "react-icons/pi";
 const features = [
   {
     icon: <PiUserCircleCheckBold />,
-    title: "User-centric experiences",
-    description:
-      "Create compelling content across more devices than ever with tools that build versatile, structured content and integrate seamlessly with a wide range of digital marketing channels.",
+    title: "Intuitive Drag-and-Drop Editor",
+    description: "Design your site with ease, no coding required.",
   },
   {
     icon: <FaArrowTrendDown />,
-    title: "Lower cost of ownership",
-    description:
-      "With no vendor lock-in and low-code/no-code options available, marketers can independently drive your digital strategy and publishing workflows.",
+    title: "Responsive Templates.",
+    description: "Choose from a variety of mobile-friendly themes.",
   },
   {
     icon: <FaExpandArrowsAlt />,
-    title: "Limitless flexibility",
-    description:
-      "A fully composable, open-source, API-first platform that allows you to design around your vision and your user needs. A global network of open source contributors continuously develops and innovates on core features.",
+    title: "SEO Optimization",
+    description: "Boost your rankings with built-in SEO tools.",
   },
   {
     icon: <PiBuildingsDuotone />,
-    title: "Enterprise-grade tooling",
-    description:
-      "The most accessible, secure open-source DXP available. It adheres to industry standard privacy and security standards and checks all the boxes for your IT team.",
+    title: "Fast & Secure Hosting",
+    description: "Enjoy top-tier performance and security.",
+  },
+  {
+    icon: <PiBuildingsDuotone />,
+    title: "E-Commerce Ready",
+    description: "Start selling online with seamless integrations.",
+  },
+  {
+    icon: <PiBuildingsDuotone />,
+    title: "Extensive Integrations",
+    description: "Connect with your favorite tools and services.",
   },
 ];
 
 const FeaturesSection = () => {
   return (
-    <section
-      className="py-16 px-6 md:px-12 lg:px-20 bg-gray-100 text-gray-900"
-      // style={{ backgroundImage: `url(${bg})` }}
-    >
-      <div className="max-w-6xl mx-auto ">
-        <h2 className="text-5xl font-bold mb-10">Flexible by design</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 ">
+    <section className="py-16 px-6 md:px-12 lg:px-20 bg-gray-100 text-gray-900">
+      <div className="max-w-6xl mx-auto">
+        <h2 className="text-5xl font-bold mb-10 text-center">
+          Flexible by Design
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature, index) => (
-            <div key={index} className="flex flex-col items-center  p-6">
-              <div className="text-5xl rounded-xl border-2 p-3 mb-4">
+            <div
+              key={index}
+              className="flex flex-col items-center p-6 bg-white rounded-xl shadow-md"
+            >
+              <div className="text-5xl text-[#087E8B] rounded-xl border-2 border-[#087E8B] p-3 mb-4">
                 {feature.icon}
               </div>
-              <h3 className="text-3xl font-semibold mb-2">{feature.title}</h3>
-              <p className="text-gray-600 text-xl mt-2">
+              <h3 className="text-2xl font-semibold mb-2 text-center">
+                {feature.title}
+              </h3>
+              <p className="text-gray-600 text-lg text-center">
                 {feature.description}
               </p>
             </div>
