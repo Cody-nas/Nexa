@@ -44,20 +44,24 @@ const Sidebar = () => {
 
   // Navigation items
   const navItems = [
-    { name: "Dashboard", path: "/", icon: <FaHome size={20} /> },
-    { name: "Content", path: "/content", icon: <FaBook size={20} /> },
+    {
+      name: "Dashboard",
+      path: "/",
+      icon: <FaHome size={22} className="" />,
+    },
+    { name: "Content", path: "/content", icon: <FaBook size={22} /> },
     {
       name: "Tutorial",
       path: "/tutorial",
-      icon: <FaGraduationCap size={20} />,
+      icon: <FaGraduationCap size={22} />,
     },
-    { name: "Comments", path: "/comments", icon: <FaComment size={20} /> },
+    { name: "Comments", path: "/comments", icon: <FaComment size={22} /> },
     {
       name: "Templates & Themes",
       path: "/themes",
-      icon: <FaPaintBrush size={20} />,
+      icon: <FaPaintBrush size={22} />,
     },
-    { name: "Media", path: "/media", icon: <FaPhotoVideo size={20} /> },
+    { name: "Media", path: "/media", icon: <FaPhotoVideo size={22} /> },
   ];
 
   return (
