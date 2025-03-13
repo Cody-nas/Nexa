@@ -31,7 +31,7 @@ const HeroSection = () => {
         </div>
         {/* Image Content */}
         <div className="  mt-8 md:mt-0 ">
-          <div className="bg-[#087E8B] px-[340px] py-56 rounded-4xl absolute  top-36 right-8" />
+          <div className="bg-[#087E8B] px-[340px] py-56 rounded-4xl absolute  top-30 right-6" />
           <div className="md:w-2xl bg-[#0A2342] p-2 rounded-4xl absolute  top-24  right-0.5">
             <img
               src={woman}

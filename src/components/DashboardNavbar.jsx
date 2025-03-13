@@ -1,54 +1,67 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { FaBars, FaSearch, FaBell, FaUserCircle } from "react-icons/fa";
+import React, { useState, useEffect } from "react";
+import DashboardNavbar from "./DashboardNavbar";
+import Sidebar from "./Sidebar";
 
-const DashboardNavbar = () => {
+const DashboardHome = () => {
+  const [sidebarOpen, setSidebarOpen] = useState(true);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkScreenSize = () => {
+      const mobile = window.innerWidth < 768;
+      setIsMobile(mobile);
+      setSidebarOpen(!mobile);
+    };
+
+    // Initial check
+    checkScreenSize();
+
+    // Add event listener
+    window.addEventListener("resize", checkScreenSize);
+
+    // Clean up
+    return () => window.removeEventListener("resize", checkScreenSize);
+  }, []);
+
+  const toggleSidebar = () => {
+    setSidebarOpen(!sidebarOpen);
+  };
+
   return (
-    <nav className=" bg-gray-800 px-4 py-3 flex justify-between ml-64">
-      {/* left side */}
-      <div className="flex items-center text-xl">
-        <FaBars className="text-white me-4 cursor-pointer" />
-        <span className="text-white font-semibold">Nexa</span>
-      </div>
-      {/* right side */}
-      <div className="flex items-center gap-x-5">
-        <div className="relative md:w-65">
-          <span className="relative md:absolute inset-y-0 left-0 flex items-center pl-2">
-            <button className="p-1 focus:outline-none text-white md:text-black">
-              <FaSearch />
-            </button>
-          </span>
-          <input
-            type="text"
-            className="w-full px-4 py-1 pl-12 rounded shadow outline-none hidden md:block"
-          />
-        </div>
+    <div className="flex h-screen bg-gray-100">
+      {/* Sidebar component with proper props */}
+      <Sidebar isOpen={sidebarOpen} toggleSidebar={toggleSidebar} />
 
-        <div className="text-white cursor-pointer">
-          <FaBell className="w-6 h-6" />
-        </div>
+      {/* Main content area */}
+      <div
+        className={`flex flex-col flex-1 transition-all duration-300 ${
+          sidebarOpen ? "md:ml-64" : isMobile ? "ml-0" : "md:ml-16"
+        }`}
+      >
+        {/* Navbar component with sidebar state prop */}
+        <DashboardNavbar isSidebarOpen={sidebarOpen} />
 
-        <div className="relative">
-          <button className="text-white group cursor-pointer">
-            <FaUserCircle className="w-6 h-6 mt-1" />
-            <div className="z-10 hidden absolute bg-white rounded-lg shadow w-32 group-focus:block top-full right-0 ">
-              <ul className="py-2 text-sm text-gray-950">
-                <li>
-                  <Link to="/profile">Profile</Link>
-                </li>
-                <li>
-                  <Link to="/settings">Settings</Link>
-                </li>
-                <li>
-                  <Link to="/logout">Logout</Link>
-                </li>
-              </ul>
+        {/* Dashboard content */}
+        <main className="flex-1 p-6 mt-16 overflow-auto">
+          <div className="mb-6">
+            <h1 className="text-3xl font-semibold text-gray-800">Dashboard</h1>
+            <p className="text-gray-600">Welcome to Nexa admin dashboard</p>
+          </div>
+
+          {/* Your dashboard content goes here */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {/* Example card */}
+            <div className="bg-white rounded-lg shadow p-6">
+              <h2 className="text-xl font-semibold mb-4">Recent Activity</h2>
+              <p>Your dashboard content will appear here.</p>
             </div>
-          </button>
-        </div>
+
+            {/* More cards can be added here */}
+          </div>
+        </main>
       </div>
-    </nav>
+    </div>
   );
 };
 
-export default DashboardNavbar;
+export default DashboardHome;
