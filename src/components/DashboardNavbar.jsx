@@ -4,21 +4,16 @@ import { FaSearch, FaBell, FaUserCircle } from "react-icons/fa";
 
 const DashboardNavbar = ({ isSidebarOpen }) => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
+  const [isMobile, setIsMobile] = useState(false); // Initialize without window reference
   const dropdownRef = useRef(null);
 
   useEffect(() => {
-    const checkScreenSize = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
+    // Set initial value inside useEffect to avoid SSR issues
+    setIsMobile(window.innerWidth < 768);
 
-    // Initial check
-    checkScreenSize();
-
-    // Add event listener
+    const checkScreenSize = () => setIsMobile(window.innerWidth < 768);
     window.addEventListener("resize", checkScreenSize);
 
-    // Handle clicks outside dropdown
     const handleClickOutside = (event) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
         setDropdownOpen(false);
@@ -27,7 +22,6 @@ const DashboardNavbar = ({ isSidebarOpen }) => {
 
     document.addEventListener("mousedown", handleClickOutside);
 
-    // Clean up
     return () => {
       window.removeEventListener("resize", checkScreenSize);
       document.removeEventListener("mousedown", handleClickOutside);
@@ -37,53 +31,63 @@ const DashboardNavbar = ({ isSidebarOpen }) => {
   return (
     <nav
       className={`bg-[#0A2342] px-4 py-3 flex justify-between items-center shadow-md fixed top-0 right-0 z-10 transition-all duration-300 ${
-        isSidebarOpen ? "md:ml-64 ml-0" : isMobile ? "ml-0" : "md:ml-16"
-      } ${
-        isMobile
-          ? "w-full"
-          : isSidebarOpen
-          ? "w-[calc(100%-16rem)]"
-          : "w-[calc(100%-4rem)]"
+        isMobile ? "left-0" : isSidebarOpen ? "left-64" : "left-16"
       }`}
+      style={{
+        width: isMobile
+          ? "100%"
+          : isSidebarOpen
+          ? "calc(100% - 16rem)"
+          : "calc(100% - 4rem)",
+      }}
     >
-      {/* Left side - Title (only visible on mobile/when sidebar is closed) */}
+      {/* Left Side - Title */}
       {(isMobile || !isSidebarOpen) && (
         <div className="text-white font-bold text-xl ml-12 md:ml-0">
-          {/* Leave space for sidebar toggle button on mobile */}
           {!isMobile && <span>Nexa Dashboard</span>}
         </div>
       )}
 
-      {/* Spacer when sidebar is open and not mobile */}
-      {!isMobile && isSidebarOpen && <div className="flex-grow"></div>}
-
-      {/* Right side */}
+      {/* Right Side */}
       <div className="flex items-center gap-x-5 ml-auto">
-        <div className="relative">
-          <span className="absolute inset-y-0 left-0 flex items-center  text-white pl-3 pointer-events-none">
-            <FaSearch />
-          </span>
+        {/* Search */}
+        <div className="relative hidden md:block">
+          <FaSearch className="absolute top-3 left-3 text-gray-500" />
           <input
             type="text"
             placeholder="Search..."
-            className="w-full md:w-64 px-4 py-2 pl-10 rounded-lg shadow focus:outline-none focus:ring-2 focus:ring-blue-500 hidden md:block"
+            className="w-64 px-4 py-2 pl-10 rounded-lg shadow bg-white text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
-          <button className="p-2 rounded-full hover:bg-blue-800 text-white md:hidden">
-            {/* <FaSearch /> */}
-          </button>
         </div>
 
-        <div className="text-white cursor-pointer">
-          <button className="relative p-2 rounded-full hover:bg-blue-800">
-            <FaBell className="w-5 h-5" />
-            <span className="absolute top-0 right-0 block h-2 w-2 rounded-full bg-red-500"></span>
-          </button>
-        </div>
+        {/* Mobile Search Button */}
+        <button
+          className="p-2 rounded-full hover:bg-[#087E8B] text-white md:hidden"
+          aria-label="Search"
+        >
+          <FaSearch />
+        </button>
 
+        {/* Notifications */}
+        <button
+          className="relative p-2 rounded-full hover:bg-[#087E8B] text-white"
+          aria-label="Notifications"
+        >
+          <FaBell className="w-5 h-5" />
+          <span
+            className="absolute top-1 right-1 block h-2 w-2 rounded-full bg-red-500"
+            aria-label="New notification"
+          ></span>
+        </button>
+
+        {/* User Dropdown */}
         <div className="relative" ref={dropdownRef}>
           <button
             onClick={() => setDropdownOpen(!dropdownOpen)}
-            className="flex items-center text-white p-2 rounded-full hover:bg-blue-800 focus:outline-none"
+            className="flex items-center text-white p-2 rounded-full hover:bg-[#087E8B] focus:outline-none"
+            aria-expanded={dropdownOpen}
+            aria-haspopup="true"
+            aria-label="User menu"
           >
             <FaUserCircle className="w-6 h-6" />
           </button>
