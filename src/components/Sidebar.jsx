@@ -76,7 +76,7 @@ const Sidebar = () => {
       {/* Sidebar */}
       <div
         className={`fixed top-0 left-0 h-full bg-[#0A2342] text-white transition-all duration-300 shadow-lg z-30 ${
-          isOpen ? "w-64" : "w-16"
+          isOpen ? "w-55" : "w-16"
         }`}
       >
         {/* Logo */}
@@ -87,7 +87,7 @@ const Sidebar = () => {
             <h1 className="text-2xl font-bold"></h1>
           )}
         </div>
-        <hr className="border-gray-700 mx-3" />
+        {/* <hr className="border-gray-700 mx-3" /> */}
 
         {/* Navigation Links */}
         <nav>
