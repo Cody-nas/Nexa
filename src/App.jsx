@@ -12,6 +12,7 @@ import GetStarted from "./pages/GetStarted";
 import Login from "./pages/Login";
 // import DashboardLayout from "./layouts/DashboardLayout";
 import Dashboard from "./pages/Dashboard";
+import Content from "./DashboardPages/Content";
 // import { useAuth } from "./context/AuthContext"; // Ensure you have AuthContext
 
 const PrivateRoute = ({ element }) => {
@@ -22,7 +23,7 @@ const PrivateRoute = ({ element }) => {
 // Component to conditionally render the Navbar
 const Layout = ({ children }) => {
   const location = useLocation();
-  const hideNavbarRoutes = ["/login", "/dashboard"]; // Add paths where Navbar should be hidden
+  const hideNavbarRoutes = ["/login", "/dashboard", "/content"]; // Add paths where Navbar should be hidden
   return (
     <>
       {!hideNavbarRoutes.some((path) => location.pathname.startsWith(path)) && (
@@ -43,12 +44,18 @@ const App = () => {
           <Route path="/get-started" element={<GetStarted />} />
           <Route path="/login" element={<Login />} />
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/content" element={<Content />} />
 
           {/* Protected Route */}
           <Route
             path="/dashboard"
             element={<PrivateRoute element={<Dashboard />} />}
           />
+
+          {/* Dashboard Routes
+          <Route
+            path="/content"
+            element={<PrivateRoute element={<Content />} />} */}
         </Routes>
       </Layout>
     </Router>
