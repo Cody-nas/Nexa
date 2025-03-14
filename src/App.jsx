@@ -15,6 +15,7 @@ import Dashboard from "./pages/Dashboard";
 import Content from "./DashboardPages/Content";
 import Templates from "./DashboardPages/Templates";
 import Media from "./DashboardPages/Media";
+import Tools from "./DashboardPages/Tools";
 
 // import { useAuth } from "./context/AuthContext"; // Ensure you have AuthContext
 
@@ -50,6 +51,7 @@ const App = () => {
           <Route path="/content" element={<Content />} />
           <Route path="/templates" element={<Templates />} />
           <Route path="/media" element={<Media />} />
+          <Route path="/tools" element={<Tools />} />
 
           {/* Protected Route */}
           <Route

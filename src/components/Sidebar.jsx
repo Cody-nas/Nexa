@@ -55,7 +55,7 @@ const Sidebar = () => {
       icon: <HiOutlineTemplate size={22} />,
     },
     { name: "Media", path: "/media", icon: <MdOutlinePermMedia size={22} /> },
-    { name: "Tools", path: "/", icon: <FaTools size={22} /> },
+    { name: "Tools", path: "/tools", icon: <FaTools size={22} /> },
   ];
 
   return (
