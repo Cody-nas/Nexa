@@ -51,7 +51,7 @@ const Sidebar = () => {
     },
     {
       name: "Templates & Themes",
-      path: "/themes",
+      path: "/templates",
       icon: <HiOutlineTemplate size={22} />,
     },
     { name: "Media", path: "/media", icon: <MdOutlinePermMedia size={22} /> },
@@ -84,7 +84,7 @@ const Sidebar = () => {
           {isOpen ? (
             <h1 className="text-2xl font-bold transition-all">Nexa</h1>
           ) : (
-            <h1 className="text-2xl font-bold">N</h1>
+            <h1 className="text-2xl font-bold"></h1>
           )}
         </div>
         <hr className="border-gray-700 mx-3" />
@@ -99,7 +99,7 @@ const Sidebar = () => {
                   <Link
                     to={item.path}
                     className={`mb-2 rounded-md hover:bg-[#087E8B] transition-colors duration-200 py-3 px-3 flex items-center gap-3 ${
-                      isActive ? "bg-[#C7FFDA]" : ""
+                      isActive ? "bg-[#C7FFDA] text-black" : ""
                     }`}
                   >
                     <span>{item.icon}</span>
