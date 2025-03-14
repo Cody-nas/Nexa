@@ -29,7 +29,13 @@ const PrivateRoute = ({ element }) => {
 // Component to conditionally render the Navbar
 const Layout = ({ children }) => {
   const location = useLocation();
-  const hideNavbarRoutes = ["/login", "/dashboard", "/content", "/templates"]; // Add paths where Navbar should be hidden
+  const hideNavbarRoutes = [
+    "/login",
+    "/dashboard",
+    "/content",
+    "/templates",
+    "/media",
+  ]; // Add paths where Navbar should be hidden
   return (
     <>
       {!hideNavbarRoutes.some((path) => location.pathname.startsWith(path)) && (
