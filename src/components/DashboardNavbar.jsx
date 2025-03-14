@@ -44,7 +44,7 @@ const DashboardNavbar = ({ isSidebarOpen }) => {
       {/* Left Side - Title */}
       {(isMobile || !isSidebarOpen) && (
         <div className="text-white font-bold text-xl ml-12 md:ml-0">
-          {!isMobile && <span>Nexa Dashboard</span>}
+          {!isMobile && <span></span>}
         </div>
       )}
 

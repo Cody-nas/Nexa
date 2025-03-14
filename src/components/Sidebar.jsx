@@ -82,7 +82,9 @@ const Sidebar = () => {
         {/* Logo */}
         <div className="py-6 px-4 flex items-center justify-center">
           {isOpen ? (
-            <h1 className="text-2xl font-bold transition-all">Nexa</h1>
+            <Link to="/dashboard">
+              <h1 className="text-2xl font-bold transition-all">Nexa</h1>
+            </Link>
           ) : (
             <h1 className="text-2xl font-bold"></h1>
           )}

@@ -16,6 +16,8 @@ import Content from "./DashboardPages/Content";
 import Templates from "./DashboardPages/Templates";
 import Media from "./DashboardPages/Media";
 import Tools from "./DashboardPages/Tools";
+import Tutorial from "./DashboardPages/Tutorials";
+import Comments from "./DashboardPages/Comments";
 
 // import { useAuth } from "./context/AuthContext"; // Ensure you have AuthContext
 
@@ -52,6 +54,8 @@ const App = () => {
           <Route path="/templates" element={<Templates />} />
           <Route path="/media" element={<Media />} />
           <Route path="/tools" element={<Tools />} />
+          <Route path="/tutorial" element={<Tutorial />} />
+          <Route path="/comments" element={<Comments />} />
 
           {/* Protected Route */}
           <Route
