@@ -14,6 +14,8 @@ import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
 import Content from "./DashboardPages/Content";
 import Templates from "./DashboardPages/Templates";
+import Media from "./DashboardPages/Media";
+
 // import { useAuth } from "./context/AuthContext"; // Ensure you have AuthContext
 
 const PrivateRoute = ({ element }) => {
@@ -47,6 +49,7 @@ const App = () => {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/content" element={<Content />} />
           <Route path="/templates" element={<Templates />} />
+          <Route path="/media" element={<Media />} />
 
           {/* Protected Route */}
           <Route
