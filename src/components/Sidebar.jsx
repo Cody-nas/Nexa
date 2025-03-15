@@ -6,38 +6,37 @@ import {
   MdContentCopy,
   MdOutlinePermMedia,
 } from "react-icons/md";
-
 import { TiMediaFastForward } from "react-icons/ti";
-
 import { FaTools } from "react-icons/fa";
 import { GoSidebarCollapse, GoSidebarExpand } from "react-icons/go";
 
 const Sidebar = () => {
-  const [isOpen, setIsOpen] = useState(true);
-  const [isMobile, setIsMobile] = useState(false); // Initialize without window reference
+  const [isOpen, setIsOpen] = useState(false); // Default closed on mobile
+  const [isMobile, setIsMobile] = useState(false); // Track screen size
   const location = useLocation();
 
-  // Handle screen resize
+  // Handle screen resize and set initial state
   useEffect(() => {
-    // Set initial value inside useEffect to avoid SSR issues
-    setIsMobile(window.innerWidth < 768);
-
     const checkScreenSize = () => {
-      setIsMobile(window.innerWidth < 768);
+      const mobile = window.innerWidth < 768;
+      setIsMobile(mobile);
+      setIsOpen(!mobile); // Open by default on large screens, closed on mobile
     };
+
+    // Set initial value
+    checkScreenSize();
 
     window.addEventListener("resize", checkScreenSize);
     return () => window.removeEventListener("resize", checkScreenSize);
   }, []);
 
-  // Toggle sidebar function
+  // Toggle sidebar
   const toggleSidebar = () => {
-    setIsOpen(!isOpen);
+    setIsOpen((prev) => !prev);
   };
 
   // Navigation items
   const navItems = [
-    // { name: "Dashboard", path: "/", icon: <FaHome size={22} /> },
     { name: "Content", path: "/content", icon: <MdContentCopy size={22} /> },
     {
       name: "Tutorial",
@@ -60,10 +59,12 @@ const Sidebar = () => {
 
   return (
     <>
-      {/* Toggle Button (Always visible) */}
+      {/* Toggle Button (Visible on all screens) */}
       <button
         onClick={toggleSidebar}
-        className="fixed top-4 left-4 z-50 p-2 text-white rounded-md focus:outline-none hover:bg-[#087E8B]"
+        className={`fixed top-4 left-4 z-50 p-2 text-white rounded-md focus:outline-none hover:bg-[#087E8B] transition-colors duration-200 ${
+          isOpen && isMobile ? "left-60" : "left-4"
+        }`}
         aria-label={isOpen ? "Close sidebar" : "Open sidebar"}
       >
         {isOpen ? (
@@ -75,9 +76,9 @@ const Sidebar = () => {
 
       {/* Sidebar */}
       <div
-        className={`fixed top-0 left-0 h-full bg-[#0A2342] text-white transition-all duration-300 shadow-lg z-30 ${
-          isOpen ? "w-55" : "w-16"
-        }`}
+        className={`fixed top-0 left-0 h-full bg-[#0A2342] text-white transition-all duration-300 shadow-lg z-40 ${
+          isOpen ? "w-64" : "w-16"
+        } ${isMobile && !isOpen ? "-translate-x-full" : "translate-x-0"}`}
       >
         {/* Logo */}
         <div className="py-6 px-4 flex items-center justify-center">
@@ -89,7 +90,6 @@ const Sidebar = () => {
             <h1 className="text-2xl font-bold"></h1>
           )}
         </div>
-        {/* <hr className="border-gray-700 mx-3" /> */}
 
         {/* Navigation Links */}
         <nav>
@@ -106,7 +106,7 @@ const Sidebar = () => {
                   >
                     <span>{item.icon}</span>
                     {isOpen && (
-                      <span className="whitespace-nowrap overflow-hidden">
+                      <span className="whitespace-nowrap overflow-hidden text-sm">
                         {item.name}
                       </span>
                     )}
@@ -118,10 +118,18 @@ const Sidebar = () => {
         </nav>
       </div>
 
-      {/* Adjust Main Content */}
+      {/* Overlay for mobile when sidebar is open */}
+      {/* {isMobile && isOpen && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-50 z-30 lg:hidden"
+          onClick={toggleSidebar}
+        />
+      )} */}
+
+      {/* Adjust Main Content Margin */}
       <div
         className={`${
-          isOpen ? "md:ml-64" : "md:ml-16"
+          isOpen && !isMobile ? "lg:ml-64" : "lg:ml-16"
         } transition-all duration-300`}
       />
     </>
