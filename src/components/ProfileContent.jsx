@@ -1,14 +1,14 @@
 import React, { useState, useRef } from "react";
+import { FaUser } from "react-icons/fa";
 
 const ProfileContent = () => {
   const [user, setUser] = useState({
     name: "John Doe",
     email: "john.doe@example.com",
     bio: "A passionate developer building cool stuff.",
-    avatar: "/api/placeholder/150/150",
+    avatar: null, // Set to null initially for fallback
     role: "Senior Developer",
     location: "San Francisco, CA",
-    joinDate: "January 2023",
   });
   const [isEditing, setIsEditing] = useState(false);
   const [formData, setFormData] = useState(user);
@@ -31,7 +31,6 @@ const ProfileContent = () => {
 
   const saveChanges = () => {
     setSaving(true);
-    // Simulate API call with timeout
     setTimeout(() => {
       setUser(formData);
       setIsEditing(false);
@@ -61,9 +60,6 @@ const ProfileContent = () => {
       <div className="bg-white shadow-xl rounded-lg overflow-hidden w-full max-w-md">
         {/* Header with gradient background */}
         <div className="bg-gradient-to-r from-blue-600 to-purple-700 p-6 pb-12 relative">
-          <div className="absolute top-4 right-4 text-white opacity-80 text-sm">
-            Member since {user.joinDate}
-          </div>
           <h1 className="text-white text-xl font-bold text-center">
             User Profile
           </h1>
@@ -76,11 +72,18 @@ const ProfileContent = () => {
               className="absolute inset-0 rounded-full bg-black opacity-0 group-hover:opacity-30 transition-opacity cursor-pointer"
               onClick={triggerFileInput}
             ></div>
-            <img
-              src={isEditing ? formData.avatar : user.avatar}
-              alt="User Avatar"
-              className="w-24 h-24 rounded-full object-cover border-4 border-white shadow-lg"
-            />
+            {formData.avatar ? (
+              <img
+                src={isEditing ? formData.avatar : user.avatar}
+                alt="User Avatar"
+                className="w-24 h-24 rounded-full object-cover border-4 border-white shadow-lg"
+                onError={(e) => (e.target.style.display = "none")} // Hide on error
+              />
+            ) : (
+              <div className="w-24 h-24 rounded-full bg-gray-200 border-4 border-white shadow-lg flex items-center justify-center">
+                <FaUser className="text-gray-500 text-3xl" />
+              </div>
+            )}
             <input
               ref={fileInputRef}
               type="file"
@@ -89,32 +92,34 @@ const ProfileContent = () => {
               className="hidden"
               onChange={handleAvatarChange}
             />
-            <div
-              className="absolute bottom-0 right-0 bg-blue-500 text-white p-1 rounded-full w-8 h-8 flex items-center justify-center hover:bg-blue-600 transition cursor-pointer"
-              title="Change Avatar"
-              onClick={triggerFileInput}
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-4 w-4"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
+            {isEditing && (
+              <div
+                className="absolute bottom-0 right-0 bg-blue-500 text-white p-1 rounded-full w-8 h-8 flex items-center justify-center hover:bg-blue-600 transition cursor-pointer"
+                title="Change Avatar"
+                onClick={triggerFileInput}
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"
-                />
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"
-                />
-              </svg>
-            </div>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-4 w-4"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"
+                  />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"
+                  />
+                </svg>
+              </div>
+            )}
           </div>
         </div>
 
