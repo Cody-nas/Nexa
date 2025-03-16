@@ -18,6 +18,7 @@ import Media from "./DashboardPages/Media";
 import Tools from "./DashboardPages/Tools";
 import Tutorial from "./DashboardPages/Tutorials";
 import Comments from "./DashboardPages/Comments";
+import Profile from "./DashboardPages/Profile";
 
 const PrivateRoute = ({ element }) => {
   const { user } = useAuth();
@@ -33,6 +34,7 @@ const Layout = ({ children }) => {
     "/content",
     "/templates",
     "/media",
+    "/profile",
   ]; // Add paths where Navbar should be hidden
   return (
     <>
@@ -60,6 +62,7 @@ const App = () => {
           <Route path="/tools" element={<Tools />} />
           <Route path="/tutorial" element={<Tutorial />} />
           <Route path="/comments" element={<Comments />} />
+          <Route path="/profile" element={<Profile />} />
 
           {/* Protected Route */}
           <Route

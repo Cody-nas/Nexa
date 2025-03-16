@@ -110,7 +110,7 @@ const MediaComponent = () => {
   ];
 
   return (
-    <div className="lg:ml-64 mt-16 p-4 sm:p-6 lg:p-8 min-h-screen bg-gray-100">
+    <div className="lg:ml-64 mt-16 p-4 sm:p-6 lg:p-8 min-h-screen ">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-3xl font-bold text-gray-900 mb-8">Media Library</h2>
 
