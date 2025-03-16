@@ -10,7 +10,7 @@ import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import GetStarted from "./pages/GetStarted";
 import Login from "./pages/Login";
-// import DashboardLayout from "./layouts/DashboardLayout";
+
 import Dashboard from "./pages/Dashboard";
 import Content from "./DashboardPages/Content";
 import Templates from "./DashboardPages/Templates";
@@ -18,8 +18,6 @@ import Media from "./DashboardPages/Media";
 import Tools from "./DashboardPages/Tools";
 import Tutorial from "./DashboardPages/Tutorials";
 import Comments from "./DashboardPages/Comments";
-
-// import { useAuth } from "./context/AuthContext"; // Ensure you have AuthContext
 
 const PrivateRoute = ({ element }) => {
   const { user } = useAuth();
