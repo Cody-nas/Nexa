@@ -175,7 +175,7 @@ const HomeContent = () => {
   // Render loading state
   if (loading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50 p-6 md:p-8 flex justify-center items-center">
+      <div className="min-h-screen  bg-gradient-to-br from-gray-50 to-blue-50 p-6 md:p-8 flex justify-center items-center">
         <div className="text-center text-blue-600">
           <FaSpinner className="animate-spin mx-auto h-12 w-12 mb-4" />
           <p className="text-xl font-medium">Loading analytics data...</p>
@@ -221,7 +221,7 @@ const HomeContent = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50 p-6 md:p-8">
+    <div className="min-h-screen mt-12 bg-gradient-to-br from-gray-50 to-blue-50 p-6 md:p-8">
       {/* Dashboard Header */}
       <div className="mb-8 flex flex-col md:flex-row justify-between items-start md:items-center">
         <div>
