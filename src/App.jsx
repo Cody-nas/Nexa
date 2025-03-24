@@ -7,10 +7,6 @@ import {
   useLocation,
   Navigate,
 } from "react-router-dom";
-import Navbar from "./components/Navbar";
-import Home from "./pages/Home";
-import GetStarted from "./pages/GetStarted";
-import Login from "./pages/Login";
 
 import Dashboard from "./pages/Dashboard";
 import Content from "./DashboardPages/Content";
@@ -31,7 +27,7 @@ const Layout = ({ children }) => {
   const location = useLocation();
   const hideNavbarRoutes = [
     "/login",
-    "/dashboard",
+    "/",
     "/content",
     "/templates",
     "/media",
@@ -53,10 +49,8 @@ const App = () => {
       <Layout>
         <Routes>
           {/* Public Routes */}
-          <Route path="/" element={<Home />} />
-          <Route path="/get-started" element={<GetStarted />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/dashboard" element={<Dashboard />} />
+
+          <Route path="/" element={<Dashboard />} />
           <Route path="/content" element={<Content />} />
           <Route path="/templates" element={<Templates />} />
           <Route path="/media" element={<Media />} />
@@ -66,10 +60,7 @@ const App = () => {
           <Route path="/profile" element={<Profile />} />
 
           {/* Protected Route */}
-          <Route
-            path="/dashboard"
-            element={<PrivateRoute element={<Dashboard />} />}
-          />
+          <Route path="/" element={<PrivateRoute element={<Dashboard />} />} />
 
           {/* Dashboard Routes
           <Route

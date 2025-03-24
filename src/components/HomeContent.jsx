@@ -226,11 +226,11 @@ const HomeContent = () => {
       <div className="mb-8 flex flex-col md:flex-row justify-between items-start md:items-center">
         <div>
           <h1 className="text-3xl font-bold text-gray-800 mb-2">
-            Analytics Dashboard
+            Welcome, Nas
           </h1>
-          <p className="text-gray-600">
+          {/* <p className="text-gray-600">
             Real-time insights from your Google Analytics integration
-          </p>
+          </p> */}
         </div>
 
         {/* Time Range Selector */}
