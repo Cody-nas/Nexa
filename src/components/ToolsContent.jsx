@@ -150,7 +150,7 @@ const ToolsContent = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50 p-6 md:p-8">
       {/* Header */}
-      <div className="mb-12 max-w-4xl mx-auto text-center md:text-left">
+      <div className="mb-12 max-w-4xl mt-12 mx-auto text-center md:text-left">
         <div className="inline-block bg-blue-500 bg-opacity-10 px-4 py-2 rounded-full text-blue-700 font-semibold mb-3">
           Discover & Connect
         </div>
